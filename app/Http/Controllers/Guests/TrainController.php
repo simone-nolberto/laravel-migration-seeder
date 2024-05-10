@@ -14,7 +14,7 @@ class TrainController extends Controller
     public function index()
     {
 
-        // dd(Train::all());
+        
         $trains = Train::orderBy('id', 'ASC')->get();
 
         return view('guests.trains.index', compact('trains'));
@@ -32,9 +32,11 @@ class TrainController extends Controller
 
     public function today(Train $train)
     {
-        $TodayTrains = Train::where('departure_station', 'Roma Termini')->get();
 
-        // dd($TodayTrains);
+        // dd(Train::where('departure_day', now())->toRawSql());
+
+        $TodayTrains = Train::where('departure_day', date('Y-m-d'))->get();
+
         return view('guests.trains.today', compact('TodayTrains'));
     }
 }

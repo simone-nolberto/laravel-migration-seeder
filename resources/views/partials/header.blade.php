@@ -11,14 +11,14 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('guests.index') }}" aria-current="page">Home
+                        <a class="nav-link {{Route::currentRouteName() === 'guests.index' ? 'text-black' :''}}" href="{{ route('guests.index') }}" aria-current="page">Home
                             <span class="visually-hidden">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('guests.trains.index') }}">Treni</a>
+                        <a class="nav-link {{Route::currentRouteName() === 'guests.trains.index' ? 'text-black' :''}}" href="{{ route('guests.trains.index') }}">Treni</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('guests.trains.today') }}">In partenza oggi</a>
+                        <a class="nav-link {{Route::currentRouteName() === 'guests.trains.today' ? 'text-black' :''}}" href="{{ route('guests.trains.today') }}">In partenza oggi</a>
                     </li>
 
                 </ul>

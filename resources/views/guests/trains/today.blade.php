@@ -18,14 +18,15 @@
                             <div class="card-body">
                                 <h3 class="card-title">{{ $train->azienda }}</h3>
                                 <p>Treno N°: {{ $train->train_code }}</p>
-                                <p>In partenza da {{ $train->departure_station }} alle ore {{ $train->departure_time }}</p>
+                                <p>In partenza il {{ $train->departure_day }} da {{ $train->departure_station }} alle ore
+                                    {{ $train->departure_time }}</p>
                                 <p>Arriverà a {{ $train->arrival_station }} alle ore {{ $train->arrival_time }}</p>
                             </div>
                         </div>
                     </a>
                 </div>
             @empty
-                <p>No cap here</p>
+                <p>Spiacenti, non ci sono treni in partenza oggi</p>
             @endforelse
 
 
