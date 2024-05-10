@@ -1,10 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="container text-center">
+        <h1>Welcome!</h1>
+        <p>Questi sono i treni in partenza oggi</p>
+    </div>
+
+
+
     <div class="container">
         <div class="row row-cols-md-3 py-5 g-5">
 
-            @forelse ($trains as $train)
+            @forelse ($TodayTrains as $train)
                 <div class="col">
                     <a href="{{ Route('guests.trains.show', $train) }}">
                         <div class="card">

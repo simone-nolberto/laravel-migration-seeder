@@ -22,4 +22,6 @@ Route::get('/', function () {
 Route::get('/trains', [TrainController::class, 'index'])->name('guests.trains.index');
 
 
-Route::get('/trains/train', [TrainController::class, 'show'])->name('guests.trains.show');
+Route::get('/trains/{train}', [TrainController::class, 'show'])->name('guests.trains.show');
+
+Route::get('/today', [TrainController::class, 'today'])->name('guests.trains.today');

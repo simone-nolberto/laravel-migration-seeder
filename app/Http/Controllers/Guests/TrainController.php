@@ -28,4 +28,13 @@ class TrainController extends Controller
     {
         return view('guests.trains.show', compact('train'));
     }
+
+
+    public function today(Train $train)
+    {
+        $TodayTrains = Train::where('departure_station', 'Roma Termini')->get();
+
+        // dd($TodayTrains);
+        return view('guests.trains.today', compact('TodayTrains'));
+    }
 }
