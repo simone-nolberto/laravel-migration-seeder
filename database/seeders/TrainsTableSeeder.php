@@ -32,19 +32,18 @@ class TrainsTableSeeder extends Seeder
 
 
         for ($i = 0; $i < 10; $i++) {
-            $newTrains = new Train();
-            $newTrains->id = $faker->numerify();
-            $newTrains->azienda = $faker->word(1) . 'Trains';
-            $newTrains->departure_station = $faker->streetName() . 'station';
-            $newTrains->arrival_station = $faker->streetName() . 'station';
-            $newTrains->departure_day = $faker->date();
-            $newTrains->departure_time = $faker->time();
-            $newTrains->arrival_time = $faker->time();
-            $newTrains->train_code = $faker->randomNumber(4, true);
-            $newTrains->coach_number = $faker->randomNumber(4, true);
-            $newTrains->in_time = $faker->boolean();
-            $newTrains->deleted = $faker->boolean();
-            $newTrains->save();
+            $train = new Train();
+            $train->azienda = $faker->word(1) . 'Trains';
+            $train->departure_station = $faker->city();
+            $train->arrival_station = $faker->city();
+            $train->departure_day = $faker->date();
+            $train->departure_time = $faker->time();
+            $train->arrival_time = $faker->time();
+            $train->train_code = $faker->randomNumber(4, true);
+            $train->coach_number = $faker->randomNumber(1, true);
+            $train->in_time = $faker->boolean();
+            $train->deleted = $faker->boolean();
+            $train->save();
         }
     }
 }
